@@ -1,5 +1,5 @@
 !Command: show running-config
-!Time: Sun Aug 16 02:48:17 2015
+!Time: Sun Aug 16 06:37:10 2015
 
 version 6.0(2)A4(5)
 hostname Switch
@@ -225,6 +225,8 @@ ip access-list VLAN204
   10 permit ip 172.16.0.0/24 any
   20 permit tcp any any established
 ip access-list VLANtest
+ip access-list vlan200
+  10 permit ip any any
 class-map type control-plane match-any copp-ftp
   match access-group name copp-system-acl-ftp
 class-map type control-plane match-any copp-http
@@ -380,7 +382,7 @@ snmp-server enable traps poe pwrusageon
 snmp-server enable traps poe pwrusageoff
 snmp-server enable traps poe police
 
-vlan configuration 1
+vlan configuration 1,200
 vlan 1,10-159,200-205,500
 vrf context management
 
@@ -410,6 +412,7 @@ interface port-channel4
 interface port-channel5
   speed 1000
   switchport mode trunk
+  spanning-tree port type normal
 
 interface Ethernet1/1
   switchport mode trunk
@@ -445,12 +448,12 @@ interface Ethernet1/6
 
 interface Ethernet1/7
   switchport mode trunk
-  channel-group 4
+  channel-group 4
   no shutdown
 
 interface Ethernet1/8
   switchport mode trunk
-  channel-group 4
+  channel-group 4
   no shutdown
 
 interface Ethernet1/9
@@ -585,4 +588,5 @@ line console
 line vty
 boot kickstart bootflash:/n3500-uk9-kickstart.6.0.2.A4.5.bin 
 boot system bootflash:/n3500-uk9.6.0.2.A4.5.bin 
+ip route 0.0.0.0/0 172.16.0.4
 logging monitor 6
