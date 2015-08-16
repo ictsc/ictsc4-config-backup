@@ -295,7 +295,7 @@ interface Ethernet1/26
 interface Ethernet1/27
   no shutdown
 
-interface Ethernet1/28
+interface Ethernet1/28
   no shutdown
 
 interface Ethernet1/29
