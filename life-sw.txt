@@ -1,0 +1,222 @@
+Current configuration : 5034 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname life-sw
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$dLWq$BfqQq5PUPTDp1t3NeLZmK/
+!
+username admin privilege 15 password 0 Ciut915d
+!
+!
+no aaa new-model
+switch 1 provision ws-c2960s-48lps-l
+!
+!
+ip domain-name life-sw.admin.pkpk
+!
+!
+crypto pki trustpoint TP-self-signed-3462933120
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3462933120
+ revocation-check none
+ rsakeypair TP-self-signed-3462933120
+!
+!
+crypto pki certificate chain TP-self-signed-3462933120
+ certificate self-signed 01
+  30820240 308201A9 A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 33343632 39333331 3230301E 170D3933 30333031 30303033 
+  30345A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 34363239 
+  33333132 3030819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 
+  8100C9A5 EAD88D31 94604048 D819EA38 76760070 17BE606F EABF3B02 D05D9407 
+  6A9B499D B73C7688 8372EA59 EEAD4AA9 1CFDED5D 54126172 602D38C7 9C357FA0 
+  C0AD9385 D81C16F9 0899DEB0 9F138FC1 B66191F5 783A1610 63447D71 CA915FCB 
+  EC8ED074 0772D4E5 8A8D71D3 29CEA677 A43F84FF C83BA65A B24E1DC0 3AC0903E 
+  9B0B0203 010001A3 68306630 0F060355 1D130101 FF040530 030101FF 30130603 
+  551D1104 0C300A82 086C6966 652D7377 2E301F06 03551D23 04183016 80146E64 
+  25F3D40A DC5CBC90 EF776B4E 47BAC98E 8879301D 0603551D 0E041604 146E6425 
+  F3D40ADC 5CBC90EF 776B4E47 BAC98E88 79300D06 092A8648 86F70D01 01040500 
+  03818100 5189039D 3B7450A4 D5975076 5FDD24F0 F79D92D9 656A659D B2119104 
+  0A0B2F33 20342065 3BA66784 D0CAE683 6FD9B300 5411E26F 7F5E4A86 BEBE4C79 
+  51A664C5 78064B4C A6FB2524 DEADDF70 7CB0D739 79C4493F 5995BB93 81F9A61D 
+  2A570007 601E25A9 37F1A702 4B6D9505 7BD6DB35 3F55854B 3DE647E3 38523D0A D143D82F
+  quit
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+ip ssh version 2
+!
+!
+interface Port-channel1
+ switchport mode trunk
+!
+interface FastEthernet0
+ no ip address
+!
+interface GigabitEthernet1/0/1
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/2
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 200
+ switchport mode access
+!
+interface GigabitEthernet1/0/13
+!
+interface GigabitEthernet1/0/14
+!
+interface GigabitEthernet1/0/15
+!
+interface GigabitEthernet1/0/16
+!
+interface GigabitEthernet1/0/17
+!
+interface GigabitEthernet1/0/18
+!
+interface GigabitEthernet1/0/19
+!
+interface GigabitEthernet1/0/20
+!
+interface GigabitEthernet1/0/21
+!
+interface GigabitEthernet1/0/22
+!
+interface GigabitEthernet1/0/23
+!
+interface GigabitEthernet1/0/24
+!
+interface GigabitEthernet1/0/25
+!
+interface GigabitEthernet1/0/26
+!
+interface GigabitEthernet1/0/27
+!
+interface GigabitEthernet1/0/28
+!
+interface GigabitEthernet1/0/29
+!
+interface GigabitEthernet1/0/30
+!
+interface GigabitEthernet1/0/31
+!
+interface GigabitEthernet1/0/32
+!
+interface GigabitEthernet1/0/33
+!
+interface GigabitEthernet1/0/34
+!
+interface GigabitEthernet1/0/35
+!
+interface GigabitEthernet1/0/36
+!
+interface GigabitEthernet1/0/37
+!
+interface GigabitEthernet1/0/38
+!
+interface GigabitEthernet1/0/39
+!
+interface GigabitEthernet1/0/40
+!
+interface GigabitEthernet1/0/41
+!
+interface GigabitEthernet1/0/42
+!
+interface GigabitEthernet1/0/43
+!
+interface GigabitEthernet1/0/44
+!
+interface GigabitEthernet1/0/45
+!
+interface GigabitEthernet1/0/46
+!
+interface GigabitEthernet1/0/47
+!
+interface GigabitEthernet1/0/48
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/49
+ switchport mode trunk
+ channel-group 1 mode on
+!
+interface GigabitEthernet1/0/50
+ switchport mode trunk
+ channel-group 1 mode on
+!
+interface GigabitEthernet1/0/51
+!
+interface GigabitEthernet1/0/52
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan200
+ ip address 172.16.0.5 255.255.255.0
+!
+ip http server
+ip http secure-server
+!
+line con 0
+line vty 0 4
+ login local
+line vty 5 15
+ login
+!
+!
+monitor session 1 source interface Po1
+monitor session 1 destination interface Gi1/0/9
+end

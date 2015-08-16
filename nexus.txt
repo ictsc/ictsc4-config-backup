@@ -1,0 +1,588 @@
+!Command: show running-config
+!Time: Sun Aug 16 02:48:17 2015
+
+version 6.0(2)A4(5)
+hostname Switch
+
+feature telnet
+feature tacacs+
+feature interface-vlan
+feature lacp
+feature lldp
+feature vtp
+
+username admin password 5 $1$tqARmYA/$WFFrbkn2zKj02G96rYgQE0  role network-admin
+no password strength-check
+ip domain-lookup
+crypto key param rsa label E0073NtStgBsw20Tst.mobility.com modulus 512 
+ip access-list Team1
+  10 permit ip any 192.168.1.0/24
+  20 permit ip any 192.168.101.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.1.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.10.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team10
+  10 permit ip any 192.168.10.0/24
+  20 permit ip any 192.168.110.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.10.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.100.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team11
+  10 permit ip any 192.168.11.0/24
+  20 permit ip any 192.168.111.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.11.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.110.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team12
+  10 permit ip any 192.168.12.0/24
+  20 permit ip any 192.168.112.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.12.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.120.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team13
+  10 permit ip any 192.168.13.0/24
+  20 permit ip any 192.168.113.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.13.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.130.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team14
+  10 permit ip any 192.168.14.0/24
+  20 permit ip any 192.168.114.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.14.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.140.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team15
+  10 permit ip any 192.168.15.0/24
+  20 permit ip any 192.168.115.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.15.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.150.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team2
+  10 permit ip any 192.168.2.0/24
+  20 permit ip any 192.168.102.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.2.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.20.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team3
+  10 permit ip any 192.168.3.0/24
+  20 permit ip any 192.168.103.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.3.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.30.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team4
+  10 permit ip any 192.168.4.0/24
+  20 permit ip any 192.168.104.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.4.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.40.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team5
+  10 permit ip any 192.168.5.0/24
+  20 permit ip any 192.168.105.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.5.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.50.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team6
+  10 permit ip any 192.168.6.0/24
+  20 permit ip any 192.168.106.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.6.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.60.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team7
+  10 permit ip any 192.168.7.0/24
+  20 permit ip any 192.168.107.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.7.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.70.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team8
+  10 permit ip any 192.168.8.0/24
+  20 permit ip any 192.168.108.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.8.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.80.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list Team9
+  10 permit ip any 192.168.9.0/24
+  20 permit ip any 192.168.109.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.9.0.0/8
+  50 deny ip any 10.0.0.0/8
+  60 permit ip any 172.16.90.0/24
+  70 permit udp any 172.16.4.0/24 eq snmp
+  80 permit icmp any 172.16.4.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
+ip access-list VLAN200
+  10 permit tcp any any established
+ip access-list VLAN201
+  10 deny ip any 172.16.0.0/16
+  20 deny ip any 192.168.0.0/16
+  30 deny ip any 10.0.0.0/8
+  40 permit ip any any
+ip access-list VLAN203
+  10 permit udp any 172.16.4.0/24 eq snmp
+  20 permit icmp any 172.16.4.0/24 echo-reply
+  30 permit ip any 172.16.0.0/24
+ip access-list VLAN204
+  10 permit ip 172.16.0.0/24 any
+  20 permit tcp any any established
+ip access-list VLANtest
+class-map type control-plane match-any copp-ftp
+  match access-group name copp-system-acl-ftp
+class-map type control-plane match-any copp-http
+  match access-group name copp-system-acl-http
+class-map type control-plane match-any copp-icmp
+  match access-group name copp-system-acl-icmp
+class-map type control-plane match-any copp-ntp
+  match access-group name copp-system-acl-ntp
+class-map type control-plane match-any copp-s-arp
+class-map type control-plane match-any copp-s-bfd
+  match access-group name copp-system-acl-bfd
+class-map type control-plane match-any copp-s-bpdu
+class-map type control-plane match-any copp-s-cdp
+class-map type control-plane match-any copp-s-default
+class-map type control-plane match-any copp-s-dhcpreq
+class-map type control-plane match-any copp-s-dhcpresp
+  match access-group name copp-system-dhcp-relay
+class-map type control-plane match-any copp-s-eigrp
+  match access-group name copp-system-acl-eigrp
+class-map type control-plane match-any copp-s-glean
+class-map type control-plane match-any copp-s-igmp
+class-map type control-plane match-any copp-s-ip-nat
+class-map type control-plane match-any copp-s-ip-options
+class-map type control-plane match-any copp-s-ipmc-g-hit
+class-map type control-plane match-any copp-s-ipmc-rpf-fail-g
+class-map type control-plane match-any copp-s-ipmc-rpf-fail-sg
+class-map type control-plane match-any copp-s-ipmcmiss
+class-map type control-plane match-any copp-s-l3destmiss
+class-map type control-plane match-any copp-s-l3mtufail
+class-map type control-plane match-any copp-s-lacp
+class-map type control-plane match-any copp-s-lldp
+class-map type control-plane match-any copp-s-pimautorp
+class-map type control-plane match-any copp-s-pimreg
+class-map type control-plane match-any copp-s-ping
+  match access-group name copp-system-acl-ping
+class-map type control-plane match-any copp-s-ptp
+class-map type control-plane match-any copp-s-routingProto1
+  match access-group name copp-system-acl-routingproto1
+class-map type control-plane match-any copp-s-routingProto2
+  match access-group name copp-system-acl-routingproto2
+class-map type control-plane match-any copp-s-ttl1
+class-map type control-plane match-any copp-snmp
+  match access-group name copp-system-acl-snmp
+class-map type control-plane match-any copp-ssh
+  match access-group name copp-system-acl-ssh
+class-map type control-plane match-any copp-stftp
+  match access-group name copp-system-acl-stftp
+class-map type control-plane match-any copp-tacacsradius
+  match access-group name copp-system-acl-tacacsradius
+class-map type control-plane match-any copp-telnet
+  match access-group name copp-system-acl-telnet
+policy-map type control-plane copp-system-policy 
+  class copp-s-default
+    police pps 400 
+  class copp-s-ping
+    police pps 100 
+  class copp-s-l3destmiss
+    police pps 100 
+  class copp-s-glean
+    police pps 500 
+  class copp-s-l3mtufail
+    police pps 100 
+  class copp-s-ttl1
+    police pps 100 
+  class copp-s-ip-options
+    police pps 100 
+  class copp-s-ip-nat
+    police pps 100 
+  class copp-s-ipmcmiss
+    police pps 400 
+  class copp-s-ipmc-g-hit
+    police pps 400 
+  class copp-s-ipmc-rpf-fail-g
+    police pps 400 
+  class copp-s-ipmc-rpf-fail-sg
+    police pps 400 
+  class copp-s-dhcpreq
+    police pps 300 
+  class copp-s-dhcpresp
+    police pps 300 
+  class copp-s-igmp
+    police pps 400 
+  class copp-s-routingProto2
+    police pps 1300 
+  class copp-s-eigrp
+    police pps 200 
+  class copp-s-pimreg
+    police pps 200 
+  class copp-s-pimautorp
+    police pps 200 
+  class copp-s-routingProto1
+    police pps 1000 
+  class copp-s-arp
+    police pps 200 
+  class copp-s-ptp
+    police pps 1000 
+  class copp-s-bpdu
+    police pps 12000 
+  class copp-s-cdp
+    police pps 400 
+  class copp-s-lacp
+    police pps 400 
+  class copp-s-lldp
+    police pps 200 
+  class copp-icmp
+    police pps 200 
+  class copp-telnet
+    police pps 500 
+  class copp-ssh
+    police pps 500 
+  class copp-snmp
+    police pps 500 
+  class copp-ntp
+    police pps 100 
+  class copp-tacacsradius
+    police pps 400 
+  class copp-stftp
+    police pps 400 
+  class copp-ftp
+    police pps 100 
+  class copp-http
+    police pps 100 
+  class copp-s-bfd
+    police pps 350 
+control-plane
+  service-policy input copp-system-policy 
+vtp mode off
+vtp domain toracon
+snmp-server user admin network-admin auth md5 0x5cc0a38a711f9ea9af1e93f60d800e83 priv 0x5cc0a38a711f9ea9af1e93f60d800e83 localizedkey
+snmp-server enable traps callhome event-notify
+snmp-server enable traps callhome smtp-send-fail
+snmp-server enable traps cfs state-change-notif
+snmp-server enable traps cfs merge-failure
+snmp-server enable traps lldp lldpRemTablesChange
+snmp-server enable traps aaa server-state-change
+snmp-server enable traps upgrade UpgradeOpNotifyOnCompletion
+snmp-server enable traps upgrade UpgradeJobStatusNotify
+snmp-server enable traps feature-control FeatureOpStatusChange
+snmp-server enable traps sysmgr cseFailSwCoreNotifyExtended
+snmp-server enable traps config ccmCLIRunningConfigChanged
+snmp-server enable traps snmp authentication
+snmp-server enable traps link cisco-xcvr-mon-status-chg
+snmp-server enable traps vtp notifs
+snmp-server enable traps vtp vlancreate
+snmp-server enable traps vtp vlandelete
+snmp-server enable traps bridge newroot
+snmp-server enable traps bridge topologychange
+snmp-server enable traps stpx inconsistency
+snmp-server enable traps stpx root-inconsistency
+snmp-server enable traps stpx loop-inconsistency
+snmp-server enable traps poe portonoff
+snmp-server enable traps poe pwrusageon
+snmp-server enable traps poe pwrusageoff
+snmp-server enable traps poe police
+
+vlan configuration 1
+vlan 1,10-159,200-205,500
+vrf context management
+
+interface Vlan1
+
+interface Vlan200
+  no shutdown
+  ip address 172.16.0.1/24
+
+interface port-channel1
+  speed 10000
+  switchport mode trunk
+  switchport access vlan 200
+
+interface port-channel2
+  speed 10000
+  switchport mode trunk
+
+interface port-channel3
+  speed 10000
+  switchport mode trunk
+
+interface port-channel4
+  speed 10000
+  switchport mode trunk
+
+interface port-channel5
+  speed 1000
+  switchport mode trunk
+
+interface Ethernet1/1
+  switchport mode trunk
+  switchport access vlan 200
+  channel-group 1
+  no shutdown
+
+interface Ethernet1/2
+  switchport mode trunk
+  switchport access vlan 200
+  channel-group 1
+  no shutdown
+
+interface Ethernet1/3
+  switchport mode trunk
+  channel-group 2
+  no shutdown
+
+interface Ethernet1/4
+  switchport mode trunk
+  channel-group 2
+  no shutdown
+
+interface Ethernet1/5
+  switchport mode trunk
+  channel-group 3
+  no shutdown
+
+interface Ethernet1/6
+  switchport mode trunk
+  channel-group 3
+  no shutdown
+
+interface Ethernet1/7
+  switchport mode trunk
+  channel-group 4
+  no shutdown
+
+interface Ethernet1/8
+  switchport mode trunk
+  channel-group 4
+  no shutdown
+
+interface Ethernet1/9
+  no shutdown
+
+interface Ethernet1/10
+  no shutdown
+
+interface Ethernet1/11
+  no shutdown
+
+interface Ethernet1/12
+  no shutdown
+
+interface Ethernet1/13
+  no shutdown
+
+interface Ethernet1/14
+  no shutdown
+
+interface Ethernet1/15
+  no shutdown
+
+interface Ethernet1/16
+  no shutdown
+
+interface Ethernet1/17
+  no shutdown
+
+interface Ethernet1/18
+  no shutdown
+
+interface Ethernet1/19
+  no shutdown
+
+interface Ethernet1/20
+  no shutdown
+
+interface Ethernet1/21
+  no shutdown
+
+interface Ethernet1/22
+  no shutdown
+
+interface Ethernet1/23
+  no shutdown
+
+interface Ethernet1/24
+  no shutdown
+
+interface Ethernet1/25
+  no shutdown
+
+interface Ethernet1/26
+  no shutdown
+
+interface Ethernet1/27
+  no shutdown
+
+interface Ethernet1/28
+  no shutdown
+
+interface Ethernet1/29
+  no shutdown
+
+interface Ethernet1/30
+  no shutdown
+
+interface Ethernet1/31
+  no shutdown
+
+interface Ethernet1/32
+  no shutdown
+
+interface Ethernet1/33
+  no shutdown
+
+interface Ethernet1/34
+  no shutdown
+
+interface Ethernet1/35
+  no shutdown
+
+interface Ethernet1/36
+  no shutdown
+
+interface Ethernet1/37
+  no shutdown
+
+interface Ethernet1/38
+  no shutdown
+
+interface Ethernet1/39
+  no shutdown
+
+interface Ethernet1/40
+  no shutdown
+
+interface Ethernet1/41
+  no shutdown
+
+interface Ethernet1/42
+  no shutdown
+
+interface Ethernet1/43
+  no shutdown
+
+interface Ethernet1/44
+  no shutdown
+
+interface Ethernet1/45
+  no shutdown
+
+interface Ethernet1/46
+  no shutdown
+
+interface Ethernet1/47
+  speed 1000
+  switchport mode trunk
+  channel-group 5
+  no shutdown
+
+interface Ethernet1/48
+  speed 1000
+  switchport mode trunk
+  channel-group 5
+  no shutdown
+
+interface mgmt0
+  vrf member management
+line console
+line vty
+boot kickstart bootflash:/n3500-uk9-kickstart.6.0.2.A4.5.bin 
+boot system bootflash:/n3500-uk9.6.0.2.A4.5.bin 
+logging monitor 6
