@@ -1,26 +1,34 @@
-Current configuration : 5034 bytes
+Current configuration : 9194 bytes
 !
 version 12.2
 no service pad
 service timestamps debug datetime msec
 service timestamps log datetime msec
-no service password-encryption
+service password-encryption
 !
-hostname life-sw
+hostname Life-SW
 !
 boot-start-marker
 boot-end-marker
 !
-enable secret 5 $1$dLWq$BfqQq5PUPTDp1t3NeLZmK/
+enable password 7 106D000C114E435E08
 !
-username admin privilege 15 password 0 Ciut915d
+username admin password 7 14341B1E185D7B7E20
 !
 !
 no aaa new-model
 switch 1 provision ws-c2960s-48lps-l
+ip dhcp excluded-address 172.16.0.1 172.16.0.99
+!
+ip dhcp pool life-seg
+   network 172.16.0.0 255.255.255.0
+   default-router 172.16.0.1 
+   dns-server 172.16.0.21 
 !
 !
-ip domain-name life-sw.admin.pkpk
+ip domain-name life-sw.tracon.pkpk
+vtp domain toracon
+vtp mode off
 !
 !
 crypto pki trustpoint TP-self-signed-3462933120
@@ -32,174 +40,342 @@ crypto pki trustpoint TP-self-signed-3462933120
 !
 crypto pki certificate chain TP-self-signed-3462933120
  certificate self-signed 01
-  30820240 308201A9 A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  30820253 308201BC A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
   31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
   69666963 6174652D 33343632 39333331 3230301E 170D3933 30333031 30303033 
-  30345A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  30365A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649 
   4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 34363239 
   33333132 3030819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 
-  8100C9A5 EAD88D31 94604048 D819EA38 76760070 17BE606F EABF3B02 D05D9407 
-  6A9B499D B73C7688 8372EA59 EEAD4AA9 1CFDED5D 54126172 602D38C7 9C357FA0 
-  C0AD9385 D81C16F9 0899DEB0 9F138FC1 B66191F5 783A1610 63447D71 CA915FCB 
-  EC8ED074 0772D4E5 8A8D71D3 29CEA677 A43F84FF C83BA65A B24E1DC0 3AC0903E 
-  9B0B0203 010001A3 68306630 0F060355 1D130101 FF040530 030101FF 30130603 
-  551D1104 0C300A82 086C6966 652D7377 2E301F06 03551D23 04183016 80146E64 
-  25F3D40A DC5CBC90 EF776B4E 47BAC98E 8879301D 0603551D 0E041604 146E6425 
-  F3D40ADC 5CBC90EF 776B4E47 BAC98E88 79300D06 092A8648 86F70D01 01040500 
-  03818100 5189039D 3B7450A4 D5975076 5FDD24F0 F79D92D9 656A659D B2119104 
-  0A0B2F33 20342065 3BA66784 D0CAE683 6FD9B300 5411E26F 7F5E4A86 BEBE4C79 
-  51A664C5 78064B4C A6FB2524 DEADDF70 7CB0D739 79C4493F 5995BB93 81F9A61D 
-  2A570007 601E25A9 37F1A702 4B6D9505 7BD6DB35 3F55854B 3DE647E3 38523D0A D143D82F
+  8100B0D9 D78D0863 AE4E714D 6A397223 CC8E718E E52FD727 0EEC4144 E2603AD4 
+  9B608F36 5040852D CA9E9879 080FD743 D345AC5F 1AD05EBF 1838FBED 8C587684 
+  A116F91D 1C8CC47C 1D264DAB 41E12FBD A63E2505 A3067DB3 6C809E3C 8A4AB26C 
+  DE0E342E 95B75839 D7F03EB2 F8D7245A A01E8840 4EE956DA C53C0DE1 D7F84ACE 
+  B1510203 010001A3 7B307930 0F060355 1D130101 FF040530 030101FF 30260603 
+  551D1104 1F301D82 1B4C6966 652D5357 2E6C6966 652D7377 2E747261 636F6E2E 
+  706B706B 301F0603 551D2304 18301680 141F9A43 FC2C8AB3 1B65C88B 0A033245 
+  579B7D7D 31301D06 03551D0E 04160414 1F9A43FC 2C8AB31B 65C88B0A 03324557 
+  9B7D7D31 300D0609 2A864886 F70D0101 04050003 8181007B 1175E855 7CB8F203 
+  E25342CE 8B643B42 23CC2449 FE8148E4 55E4D4B4 98ABE7B0 ACC982BD 0CE08980 
+  EC996927 9AFF625F 8280EE71 F3B06A94 B08BB25F 414EF961 716B4434 4B7F32A0 
+  332771D5 88BBDF61 23C8A7D7 FEC6A2B8 42E8DC6D 0398A9DC ED8DB20C 82E50D8D 
+  C51A7508 708B3587 5163B36D EDAEE6CC 0A001CC8 A20EAA
   quit
+!
 spanning-tree mode pvst
 spanning-tree extend system-id
+no spanning-tree vlan 19,29,38-39,48-49,58-59,68-69,78-79,88-89,98-99,108-109
+no spanning-tree vlan 118-119,128-129,138-139,148-149,158-159,204-205,500
 !
 !
 !
 !
 vlan internal allocation policy ascending
 !
-ip ssh version 2
+vlan 10-159 
+!
+vlan 200
+ name Life-Seg
+!
+vlan 201
+ name Guest-Wireless
+!
+vlan 202-205,500-501 
 !
 !
-interface Port-channel1
- switchport mode trunk
 !
 interface FastEthernet0
  no ip address
+ shutdown
 !
 interface GigabitEthernet1/0/1
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/2
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/3
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/4
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/5
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/6
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/7
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/8
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/9
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/10
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/11
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/12
+ description life-seg
  switchport access vlan 200
  switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/13
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/14
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/15
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/16
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/17
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/18
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/19
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/20
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/21
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/22
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/23
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/24
+ description life-seg
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/25
+ description to_no_ip_routing
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/26
+ description to_no_ip_routing
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/27
+ description to_no_ip_routing
+ switchport access vlan 30
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/28
+ description to_no_ip_routing
+ switchport access vlan 40
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/29
+ description to_no_ip_routing
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/30
+ description to_no_ip_routing
+ switchport access vlan 60
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/31
+ description to_no_ip_routing
+ switchport access vlan 70
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/32
+ description to_no_ip_routing
+ switchport access vlan 80
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/33
+ description to_no_ip_routing
+ switchport access vlan 90
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/34
+ description to_no_ip_routing
+ switchport access vlan 100
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/35
+ description to_no_ip_routing
+ switchport access vlan 110
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/36
+ description to_no_ip_routing
+ switchport access vlan 120
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/37
+ description to_no_ip_routing
+ switchport access vlan 130
+ shutdown
 !
 interface GigabitEthernet1/0/38
+ description to_no_ip_routing
+ switchport access vlan 140
+ shutdown
 !
 interface GigabitEthernet1/0/39
+ description to_no_ip_routing
+ switchport access vlan 150
+ shutdown
 !
 interface GigabitEthernet1/0/40
+ description NOT-USE
+ shutdown
 !
 interface GigabitEthernet1/0/41
+ description NOT-USE
+ shutdown
 !
 interface GigabitEthernet1/0/42
+ description NOT-USE
+ shutdown
 !
 interface GigabitEthernet1/0/43
+ description NOT-USE
+ shutdown
 !
 interface GigabitEthernet1/0/44
+ description NOT-USE
+ shutdown
 !
 interface GigabitEthernet1/0/45
+ description to_AP-NOC
+ switchport access vlan 200
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/46
+ description to_WLC-NOC
+ switchport mode trunk
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/47
+ description to_CME
+ switchport access vlan 203
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/48
- switchport mode trunk
+ description to_NAPT-Router
+ switchport access vlan 501
+ switchport mode access
+ spanning-tree portfast
 !
 interface GigabitEthernet1/0/49
- switchport mode trunk
- channel-group 1 mode on
+ description NOT-USE
+ shutdown
 !
 interface GigabitEthernet1/0/50
- switchport mode trunk
- channel-group 1 mode on
+ description NOT-USE
+ shutdown
 !
 interface GigabitEthernet1/0/51
+ description NOT-USE
+ shutdown
 !
 interface GigabitEthernet1/0/52
+ description to_Nexus_1/46
+ switchport mode trunk
 !
 interface Vlan1
  no ip address
@@ -207,16 +383,16 @@ interface Vlan1
 interface Vlan200
  ip address 172.16.0.5 255.255.255.0
 !
+ip default-gateway 172.16.0.1
 ip http server
 ip http secure-server
 !
 line con 0
 line vty 0 4
+ password 7 0327521E125670194A
  login local
+ transport input all
 line vty 5 15
  login
 !
-!
-monitor session 1 source interface Po1
-monitor session 1 destination interface Gi1/0/9
 end
