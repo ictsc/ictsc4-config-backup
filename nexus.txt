@@ -748,6 +748,7 @@ interface Ethernet1/14
   no shutdown
 
 interface Ethernet1/15
+  switchport mode trunk
   no shutdown
 
 interface Ethernet1/16
