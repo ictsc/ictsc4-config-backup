@@ -212,6 +212,9 @@ ip access-list VLAN201
   20 deny ip any 192.168.0.0/16
   30 deny ip any 10.0.0.0/8
   40 permit ip any any
+ip access-list VLAN203
+  10 permit udp any 172.16.4.0/24 eq snmp
+  20 permit icmp any 172.16.4.0/24 echo-reply
 ip access-list VLAN204
   10 permit ip 172.16.0.0/24 any
   20 permit tcp any any established
