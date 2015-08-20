@@ -409,7 +409,7 @@ vtp mode transparent
 vtp domain toracon
 snmp-server user admin network-admin auth md5 0x2006e6d2b3d9d0f69a2a565989a399e6 priv 0x2006e6d2b3d9d0f69a2a565989a399e6 localizedkey
 
-vlan 1,10-159,200-205,301-304,500-501
+vlan 1,10-159,200-205,301-315,500-501
 vrf context management
 
 interface Vlan1
@@ -666,6 +666,17 @@ interface Vlan205
   ip address 172.17.105.1/24
 
 interface Vlan301
+  no shutdown
+  ip access-group Team1 in
+  ip address 10.1.9.1/24
+
+interface Vlan302
+  no shutdown
+  ip access-group Team2 in
+  ip address 10.2.9.1/24
+
+interface Vlan303
+  ip address 10.3.9.1/24
 
 interface Vlan500
   no shutdown
