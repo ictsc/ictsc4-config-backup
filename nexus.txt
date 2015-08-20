@@ -676,7 +676,51 @@ interface Vlan302
   ip address 10.2.9.1/24
 
 interface Vlan303
+  no shutdown
+  ip access-group Team3 in
   ip address 10.3.9.1/24
+
+interface Vlan304
+  no shutdown
+  ip access-group Team4 in
+  ip address 10.4.9.1/24
+
+interface Vlan305
+  no shutdown
+  ip access-group Team5 in
+  ip address 10.5.9.1/24
+
+interface Vlan306
+  no shutdown
+  ip access-group Team6 in
+  ip address 10.6.9.1/24
+
+interface Vlan307
+  no shutdown
+  ip access-group Team7 in
+  ip address 10.7.9.1/24
+
+interface Vlan308
+  no shutdown
+  ip access-group Team8 in
+  ip address 10.8.9.1/24
+
+interface Vlan309
+  no shutdown
+  ip access-group Team9 in
+  ip address 10.9.9.1/24
+
+interface Vlan310
+  no shutdown
+  ip access-group Team10 in
+  ip address 10.10.9.1/24
+
+interface Vlan311
+  no shutdown
+  ip access-group Team11 in
+  ip address 10.11.9.1/24
+
+interface Vlan312
 
 interface Vlan500
   no shutdown
