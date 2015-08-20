@@ -663,7 +663,7 @@ interface Vlan204
 
 interface Vlan205
   no shutdown
-  ip address 172.17.5.1/24
+  ip address 172.17.105.1/24
 
 interface Vlan500
   no shutdown
