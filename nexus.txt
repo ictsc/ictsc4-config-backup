@@ -4,6 +4,7 @@ hostname N3548
 no feature telnet
 feature ospf
 feature interface-vlan
+feature dhcp
 feature lldp
 feature vtp
 
@@ -410,7 +411,10 @@ vtp domain toracon
 snmp-server user admin network-admin auth md5 0x2006e6d2b3d9d0f69a2a565989a399e6 priv 0x2006e6d2b3d9d0f69a2a565989a399e6 localizedkey
 
 vlan 1,10-159,200-205,301-315,500-501
+service dhcp
+ip dhcp relay
 vrf context management
+
 
 interface Vlan1
 
@@ -418,226 +422,181 @@ interface Vlan10
   no shutdown
   ip access-group Team1 in
   ip address 172.16.10.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan13
   no shutdown
   ip access-group Team1 in
   ip address 10.1.3.1/24
-
-interface Vlan14
-  no shutdown
-  ip access-group Team1 in
-  ip address 10.1.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan20
   no shutdown
   ip access-group Team2 in
   ip address 172.16.20.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan23
   no shutdown
   ip access-group Team2 in
   ip address 10.2.3.1/24
-
-interface Vlan24
-  no shutdown
-  ip access-group Team2 in
-  ip address 10.2.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan30
   no shutdown
   ip access-group Team3 in
   ip address 172.16.30.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan33
   no shutdown
   ip access-group Team3 in
   ip address 10.3.3.1/24
-
-interface Vlan34
-  no shutdown
-  ip access-group Team3 in
-  ip address 10.3.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan40
   no shutdown
   ip access-group Team4 in
   ip address 172.16.40.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan43
   no shutdown
   ip access-group Team4 in
   ip address 10.4.3.1/24
-
-interface Vlan44
-  no shutdown
-  ip access-group Team4 in
-  ip address 10.4.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan50
   no shutdown
   ip access-group Team5 in
   ip address 172.16.50.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan53
   no shutdown
   ip access-group Team5 in
   ip address 10.5.3.1/24
-
-interface Vlan54
-  no shutdown
-  ip access-group Team5 in
-  ip address 10.5.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan60
   no shutdown
   ip access-group Team6 in
   ip address 172.16.60.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan63
   no shutdown
   ip access-group Team6 in
   ip address 10.6.3.1/24
-
-interface Vlan64
-  no shutdown
-  ip access-group Team6 in
-  ip address 10.6.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan70
   no shutdown
   ip access-group Team7 in
   ip address 172.16.70.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan73
   no shutdown
   ip access-group Team7 in
   ip address 10.7.3.1/24
-
-interface Vlan74
-  no shutdown
-  ip access-group Team7 in
-  ip address 10.7.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan80
   no shutdown
   ip access-group Team8 in
   ip address 172.16.80.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan83
   no shutdown
   ip access-group Team8 in
   ip address 10.8.3.1/24
-
-interface Vlan84
-  no shutdown
-  ip access-group Team8 in
-  ip address 10.8.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan90
   no shutdown
   ip access-group Team9 in
   ip address 172.16.90.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan93
   no shutdown
   ip access-group Team9 in
   ip address 10.9.3.1/24
-
-interface Vlan94
-  no shutdown
-  ip access-group Team9 in
-  ip address 10.9.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan100
   no shutdown
   ip access-group Team10 in
   ip address 172.16.100.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan103
   no shutdown
   ip access-group Team10 in
   ip address 10.10.3.1/24
-
-interface Vlan104
-  no shutdown
-  ip access-group Team10 in
-  ip address 10.10.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan110
   no shutdown
   ip access-group Team11 in
   ip address 172.16.110.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan113
   no shutdown
   ip access-group Team11 in
   ip address 10.11.3.1/24
-
-interface Vlan114
-  no shutdown
-  ip access-group Team11 in
-  ip address 10.11.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan120
   no shutdown
   ip access-group Team12 in
   ip address 172.16.120.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan123
   no shutdown
   ip access-group Team12 in
   ip address 10.12.3.1/24
-
-interface Vlan124
-  no shutdown
-  ip access-group Team12 in
-  ip address 10.12.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan130
   no shutdown
   ip access-group Team13 in
   ip address 172.16.130.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan133
   no shutdown
   ip access-group Team13 in
   ip address 10.13.3.1/24
-
-interface Vlan134
-  no shutdown
-  ip access-group Team13 in
-  ip address 10.13.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan140
   no shutdown
   ip access-group Team14 in
   ip address 172.16.140.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan143
   no shutdown
   ip access-group Team14 in
   ip address 10.14.3.1/24
-
-interface Vlan144
-  no shutdown
-  ip access-group Team14 in
-  ip address 10.14.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan150
   no shutdown
   ip access-group Team15 in
   ip address 172.16.150.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan153
   no shutdown
   ip access-group Team15 in
   ip address 10.15.3.1/24
-
-interface Vlan154
-  no shutdown
-  ip access-group Team15 in
-  ip address 10.15.4.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan200
   no shutdown
@@ -939,49 +898,34 @@ boot kickstart bootflash:/n3500-uk9-kickstart.6.0.2.A4.5.bin
 boot system bootflash:/n3500-uk9.6.0.2.A4.5.bin 
 router ospf 10
   network 10.1.3.0/24 area 0.0.0.0
-  network 10.1.4.0/24 area 0.0.0.0
   network 10.1.9.0/24 area 0.0.0.0
   network 10.2.3.0/24 area 0.0.0.0
-  network 10.2.4.0/24 area 0.0.0.0
   network 10.2.9.0/24 area 0.0.0.0
   network 10.3.3.0/24 area 0.0.0.0
-  network 10.3.4.0/24 area 0.0.0.0
   network 10.3.9.0/24 area 0.0.0.0
   network 10.4.3.0/24 area 0.0.0.0
-  network 10.4.4.0/24 area 0.0.0.0
   network 10.4.9.0/24 area 0.0.0.0
   network 10.5.3.0/24 area 0.0.0.0
-  network 10.5.4.0/24 area 0.0.0.0
   network 10.5.9.0/24 area 0.0.0.0
   network 10.6.3.0/24 area 0.0.0.0
-  network 10.6.4.0/24 area 0.0.0.0
   network 10.6.9.0/24 area 0.0.0.0
   network 10.7.3.0/24 area 0.0.0.0
-  network 10.7.4.0/24 area 0.0.0.0
   network 10.7.9.0/24 area 0.0.0.0
   network 10.8.3.0/24 area 0.0.0.0
-  network 10.8.4.0/24 area 0.0.0.0
   network 10.8.9.0/24 area 0.0.0.0
   network 10.9.3.0/24 area 0.0.0.0
-  network 10.9.4.0/24 area 0.0.0.0
   network 10.9.9.0/24 area 0.0.0.0
   network 10.10.3.0/24 area 0.0.0.0
-  network 10.10.4.0/24 area 0.0.0.0
   network 10.10.9.0/24 area 0.0.0.0
   network 10.11.3.0/24 area 0.0.0.0
-  network 10.11.4.0/24 area 0.0.0.0
   network 10.11.9.0/24 area 0.0.0.0
   network 10.12.3.0/24 area 0.0.0.0
-  network 10.12.4.0/24 area 0.0.0.0
   network 10.12.9.0/24 area 0.0.0.0
   network 10.13.3.0/24 area 0.0.0.0
-  network 10.13.4.0/24 area 0.0.0.0
   network 10.13.9.0/24 area 0.0.0.0
   network 10.14.3.0/24 area 0.0.0.0
-  network 10.14.4.0/24 area 0.0.0.0
   network 10.14.9.0/24 area 0.0.0.0
   network 10.15.3.0/24 area 0.0.0.0
-  network 10.15.4.0/24 area 0.0.0.0
   network 10.15.9.0/24 area 0.0.0.0
   network 172.16.0.0/24 area 0.0.0.0
   network 172.16.1.0/24 area 0.0.0.0
