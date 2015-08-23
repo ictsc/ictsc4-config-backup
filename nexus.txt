@@ -737,13 +737,10 @@ interface Ethernet1/2
 interface Ethernet1/3
   description UCS-2-Port1
   switchport mode trunk
-  channel-group 2
   no shutdown
 
 interface Ethernet1/4
   description UCS-2-Port2
-  switchport mode trunk
-  channel-group 2
   no shutdown
 
 interface Ethernet1/5
