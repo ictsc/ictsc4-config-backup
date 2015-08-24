@@ -1,4 +1,4 @@
-Current configuration : 10664 bytes
+Current configuration : 10690 bytes
 !
 version 12.2
 no service pad
@@ -24,6 +24,7 @@ ip dhcp pool life-seg
    network 172.16.0.0 255.255.255.0
    default-router 172.16.0.1 
    dns-server 172.16.0.21 
+   domain-name admin.pkpk
 !
 !
 ip domain-name life-sw.tracon.pkpk
