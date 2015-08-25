@@ -409,6 +409,34 @@ control-plane
 vtp mode transparent
 vtp domain toracon
 snmp-server user admin network-admin auth md5 0x2006e6d2b3d9d0f69a2a565989a399e6 priv 0x2006e6d2b3d9d0f69a2a565989a399e6 localizedkey
+snmp-server enable traps callhome event-notify
+snmp-server enable traps callhome smtp-send-fail
+snmp-server enable traps cfs state-change-notif
+snmp-server enable traps cfs merge-failure
+snmp-server enable traps lldp lldpRemTablesChange
+snmp-server enable traps aaa server-state-change
+snmp-server enable traps upgrade UpgradeOpNotifyOnCompletion
+snmp-server enable traps upgrade UpgradeJobStatusNotify
+snmp-server enable traps feature-control FeatureOpStatusChange
+snmp-server enable traps sysmgr cseFailSwCoreNotifyExtended
+snmp-server enable traps config ccmCLIRunningConfigChanged
+snmp-server enable traps snmp authentication
+snmp-server enable traps mpls vpn mid-thresh-exceeded
+snmp-server enable traps mpls vpn max-thresh-exceeded
+snmp-server enable traps mpls vpn max-thresh-cleared
+snmp-server enable traps link cisco-xcvr-mon-status-chg
+snmp-server enable traps vtp notifs
+snmp-server enable traps vtp vlancreate
+snmp-server enable traps vtp vlandelete
+snmp-server enable traps bridge newroot
+snmp-server enable traps bridge topologychange
+snmp-server enable traps stpx inconsistency
+snmp-server enable traps stpx root-inconsistency
+snmp-server enable traps stpx loop-inconsistency
+snmp-server enable traps poe portonoff
+snmp-server enable traps poe pwrusageon
+snmp-server enable traps poe pwrusageoff
+snmp-server enable traps poe police
 
 vlan 1,10-159,200-205,301-315,500-501
 service dhcp
