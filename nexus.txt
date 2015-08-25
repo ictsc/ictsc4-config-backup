@@ -409,6 +409,7 @@ control-plane
 vtp mode transparent
 vtp domain toracon
 snmp-server user admin network-admin auth md5 0x2006e6d2b3d9d0f69a2a565989a399e6 priv 0x2006e6d2b3d9d0f69a2a565989a399e6 localizedkey
+snmp-server host 172.16.0.25 traps version 1 toracon 
 snmp-server enable traps callhome event-notify
 snmp-server enable traps callhome smtp-send-fail
 snmp-server enable traps cfs state-change-notif
