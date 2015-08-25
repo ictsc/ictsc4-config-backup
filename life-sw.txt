@@ -1,4 +1,4 @@
-Current configuration : 9265 bytes
+Current configuration : 9282 bytes
 !
 version 12.2
 no service pad
@@ -335,8 +335,8 @@ interface GigabitEthernet1/0/43
  shutdown
 !
 interface GigabitEthernet1/0/44
- description NOT-USE
- shutdown
+ description to _work_SW
+ switchport mode trunk
 !
 interface GigabitEthernet1/0/45
  description to_AP-NOC
