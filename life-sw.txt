@@ -1,4 +1,4 @@
-Current configuration : 9282 bytes
+Current configuration : 9153 bytes
 !
 version 12.2
 no service pad
@@ -27,8 +27,6 @@ ip dhcp pool life-seg
 !
 !
 ip domain-name life-sw.tracon.pkpk
-vtp domain toracon
-vtp mode off
 !
 !
 crypto pki trustpoint TP-self-signed-3462933120
@@ -70,16 +68,6 @@ no spanning-tree vlan 118-119,128-129,138-139,148-149,158-159,204-205,500
 !
 !
 vlan internal allocation policy ascending
-!
-vlan 10-159 
-!
-vlan 200
- name Life-Seg
-!
-vlan 201
- name Guest-Wireless
-!
-vlan 202-205,500-501 
 !
 !
 !
