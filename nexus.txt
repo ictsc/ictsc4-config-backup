@@ -770,6 +770,7 @@ interface Ethernet1/3
 
 interface Ethernet1/4
   description UCS-2-Port2
+  switchport mode trunk
   no shutdown
 
 interface Ethernet1/5
