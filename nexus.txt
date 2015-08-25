@@ -439,6 +439,7 @@ snmp-server enable traps poe portonoff
 snmp-server enable traps poe pwrusageon
 snmp-server enable traps poe pwrusageoff
 snmp-server enable traps poe police
+snmp-server community toracon group network-admin
 
 vlan 1,10-159,200-205,301-315,500-501
 service dhcp
