@@ -409,31 +409,36 @@ control-plane
 vtp mode transparent
 vtp domain toracon
 snmp-server user admin network-admin auth md5 0x2006e6d2b3d9d0f69a2a565989a399e6 priv 0x2006e6d2b3d9d0f69a2a565989a399e6 localizedkey
-no snmp-server enable traps entity entity_mib_change
-no snmp-server enable traps entity entity_module_status_change
-no snmp-server enable traps entity entity_power_status_change
-no snmp-server enable traps entity entity_module_inserted
-no snmp-server enable traps entity entity_module_removed
-no snmp-server enable traps entity entity_unrecognised_module
-no snmp-server enable traps entity entity_fan_status_change
-no snmp-server enable traps entity entity_power_out_change
-no snmp-server enable traps link linkDown
-no snmp-server enable traps link linkUp
-no snmp-server enable traps link extended-linkDown
-no snmp-server enable traps link extended-linkUp
-no snmp-server enable traps link cieLinkDown
-no snmp-server enable traps link cieLinkUp
-no snmp-server enable traps link delayed-link-state-change
-no snmp-server enable traps rf redundancy_framework
-no snmp-server enable traps license notify-license-expiry
-no snmp-server enable traps license notify-no-license-for-feature
-no snmp-server enable traps license notify-licensefile-missing
-no snmp-server enable traps license notify-license-expiry-warning
-no snmp-server enable traps rmon risingAlarm
-no snmp-server enable traps rmon fallingAlarm
-no snmp-server enable traps rmon hcRisingAlarm
-no snmp-server enable traps rmon hcFallingAlarm
-no snmp-server enable traps entity entity_sensor
+snmp-server host 172.16.0.25 traps version 1 toracon 
+snmp-server enable traps callhome event-notify
+snmp-server enable traps callhome smtp-send-fail
+snmp-server enable traps cfs state-change-notif
+snmp-server enable traps cfs merge-failure
+snmp-server enable traps lldp lldpRemTablesChange
+snmp-server enable traps aaa server-state-change
+snmp-server enable traps upgrade UpgradeOpNotifyOnCompletion
+snmp-server enable traps upgrade UpgradeJobStatusNotify
+snmp-server enable traps feature-control FeatureOpStatusChange
+snmp-server enable traps sysmgr cseFailSwCoreNotifyExtended
+snmp-server enable traps config ccmCLIRunningConfigChanged
+snmp-server enable traps snmp authentication
+snmp-server enable traps mpls vpn mid-thresh-exceeded
+snmp-server enable traps mpls vpn max-thresh-exceeded
+snmp-server enable traps mpls vpn max-thresh-cleared
+snmp-server enable traps link cisco-xcvr-mon-status-chg
+snmp-server enable traps vtp notifs
+snmp-server enable traps vtp vlancreate
+snmp-server enable traps vtp vlandelete
+snmp-server enable traps bridge newroot
+snmp-server enable traps storm-control 
+snmp-server enable traps bridge topologychange
+snmp-server enable traps stpx inconsistency
+snmp-server enable traps stpx root-inconsistency
+snmp-server enable traps stpx loop-inconsistency
+snmp-server enable traps poe portonoff
+snmp-server enable traps poe pwrusageon
+snmp-server enable traps poe pwrusageoff
+snmp-server enable traps poe police
 
 vlan 1,10-159,200-205,301-315,500-501
 service dhcp
