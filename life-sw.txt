@@ -1,4 +1,4 @@
-Current configuration : 9220 bytes
+Current configuration : 9787 bytes
 !
 version 12.2
 no service pad
@@ -364,6 +364,7 @@ interface GigabitEthernet1/0/51
 interface GigabitEthernet1/0/52
  description to_Nexus_1/46
  switchport mode trunk
+ ip access-group NTP in
 !
 interface Vlan1
  no ip address
@@ -377,6 +378,21 @@ ip http secure-server
 !
 ip access-list extended NTP
  deny   udp host 10.1.3.3 eq ntp any
+ deny   udp host 10.2.3.3 eq ntp any
+ deny   udp host 10.3.3.3 eq ntp any
+ deny   udp host 10.4.3.3 eq ntp any
+ deny   udp host 10.5.3.3 eq ntp any
+ deny   udp host 10.6.3.3 eq ntp any
+ deny   udp host 10.7.3.3 eq ntp any
+ deny   udp host 10.8.3.3 eq ntp any
+ deny   udp host 10.9.3.3 eq ntp any
+ deny   udp host 10.10.3.3 eq ntp any
+ deny   udp host 10.11.3.3 eq ntp any
+ deny   udp host 10.12.3.3 eq ntp any
+ deny   udp host 10.13.3.3 eq ntp any
+ deny   udp host 10.14.3.3 eq ntp any
+ deny   udp host 10.15.3.3 eq ntp any
+ permit ip any any
 snmp-server community toracon RW
 snmp-server host 172.16.0.25 toracon 
 !
