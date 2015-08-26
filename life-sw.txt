@@ -1,4 +1,4 @@
-Current configuration : 9153 bytes
+Current configuration : 9220 bytes
 !
 version 12.2
 no service pad
@@ -374,6 +374,9 @@ interface Vlan200
 ip default-gateway 172.16.0.1
 ip http server
 ip http secure-server
+!
+ip access-list extended NTP
+ deny   udp host 10.1.3.3 eq ntp any
 snmp-server community toracon RW
 snmp-server host 172.16.0.25 toracon 
 !
