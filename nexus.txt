@@ -442,6 +442,8 @@ snmp-server enable traps poe police
 snmp-server community toracon group network-admin
 
 vlan 1,10-159,200-205,301-315,500-501
+ip dhcp snooping
+ip dhcp snooping information option
 service dhcp
 ip dhcp relay
 vrf context management
@@ -472,6 +474,7 @@ interface Vlan23
   ip access-group Team2 in
   ip address 10.2.3.1/24
   ip dhcp relay address 172.17.105.5 
+  ip dhcp smart-relay
 
 interface Vlan30
   no shutdown
@@ -1022,3 +1025,4 @@ ip route 192.168.112.0/24 172.16.120.2
 ip route 192.168.113.0/24 172.16.130.2
 ip route 192.168.114.0/24 172.16.140.2
 ip route 192.168.115.0/24 172.16.150.2
+ip dhcp snooping vlan 23
