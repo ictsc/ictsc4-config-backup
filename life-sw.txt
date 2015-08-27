@@ -1,4 +1,4 @@
-Current configuration : 9177 bytes
+Current configuration : 9147 bytes
 !
 version 12.2
 no service pad
@@ -294,17 +294,14 @@ interface GigabitEthernet1/0/36
 interface GigabitEthernet1/0/37
  description to_no_ip_routing
  switchport access vlan 130
- shutdown
 !
 interface GigabitEthernet1/0/38
  description to_no_ip_routing
  switchport access vlan 140
- shutdown
 !
 interface GigabitEthernet1/0/39
  description to_no_ip_routing
  switchport access vlan 150
- shutdown
 !
 interface GigabitEthernet1/0/40
  description NOT-USE
