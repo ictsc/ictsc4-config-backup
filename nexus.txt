@@ -216,6 +216,9 @@ ip access-list VLAN201
 ip access-list VLAN204
   10 permit ip 172.16.0.0/24 any
   20 permit tcp any any established
+ip access-list VLAN205
+  10 deny tcp 172.16.1.0/24 any eq 22
+  20 permit ip any any
 ip access-list copp-system-acl-bfd
   10 permit udp any any eq 3784
   20 permit udp any any eq 3785
