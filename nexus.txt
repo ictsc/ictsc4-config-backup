@@ -659,76 +659,91 @@ interface Vlan301
   no shutdown
   ip access-group Team1 in
   ip address 10.1.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan302
   no shutdown
   ip access-group Team2 in
   ip address 10.2.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan303
   no shutdown
   ip access-group Team3 in
   ip address 10.3.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan304
   no shutdown
   ip access-group Team4 in
   ip address 10.4.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan305
   no shutdown
   ip access-group Team5 in
   ip address 10.5.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan306
   no shutdown
   ip access-group Team6 in
   ip address 10.6.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan307
   no shutdown
   ip access-group Team7 in
   ip address 10.7.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan308
   no shutdown
   ip access-group Team8 in
   ip address 10.8.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan309
   no shutdown
   ip access-group Team9 in
   ip address 10.9.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan310
   no shutdown
   ip access-group Team10 in
   ip address 10.10.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan311
   no shutdown
   ip access-group Team11 in
   ip address 10.11.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan312
   no shutdown
   ip access-group Team12 in
   ip address 10.12.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan313
   no shutdown
   ip access-group Team13 in
   ip address 10.13.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan314
   no shutdown
   ip access-group Team14 in
   ip address 10.14.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan315
   no shutdown
   ip access-group Team15 in
   ip address 10.15.9.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan500
   no shutdown
