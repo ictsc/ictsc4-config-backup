@@ -62,8 +62,9 @@ ip access-list Team12
   70 permit udp any 172.16.0.0/24 eq snmp
   80 permit icmp any 172.16.0.0/24 echo-reply
   90 permit ip any 172.16.5.0/24
-  100 deny ip any 172.16.0.0/16
-  110 permit ip any any
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
 ip access-list Team13
   10 permit ip any 192.168.13.0/24
   20 permit ip any 192.168.113.0/24
@@ -74,7 +75,9 @@ ip access-list Team13
   70 permit udp any 172.16.0.0/24 eq snmp
   80 permit icmp any 172.16.0.0/24 echo-reply
   90 permit ip any 172.16.5.0/24
-  100 permit ip any any
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
 ip access-list Team14
   10 permit ip any 192.168.14.0/24
   20 permit ip any 192.168.114.0/24
@@ -83,10 +86,11 @@ ip access-list Team14
   50 deny ip any 10.0.0.0/8
   60 permit ip any 172.16.140.0/24
   70 permit udp any 172.16.0.0/24 eq snmp
-  80 permit ip any 172.16.5.0/24
-  90 permit tcp any 172.16.0.0/24 established
-  100 deny ip any 172.16.0.0/16
-  110 permit ip any any
+  80 permit icmp any 172.16.0.0/24 echo-reply
+  90 permit ip any 172.16.5.0/24
+  100 permit tcp any 172.16.0.0/24 established
+  110 deny ip any 172.16.0.0/16
+  120 permit ip any any
 ip access-list Team15
   10 permit ip any 192.168.15.0/24
   20 permit ip any 192.168.115.0 0.0.0.25
