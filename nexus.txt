@@ -10,6 +10,9 @@ feature lldp
 username admin password 5 $1$ZxrrAa09$giVMu8VRORywrz.QBhtTj/  role network-admin
 ip domain-lookup
 ip access-list SSH
+  10 deny ip 192.168.0.0/16 any
+  20 deny ip 172.16.1.0/24 any
+  30 permit ip any any
 ip access-list Team1
   10 permit ip any 192.168.1.0/24
   20 permit ip any 192.168.101.0/24
@@ -935,6 +938,7 @@ interface mgmt0
   vrf member management
 line console
 line vty
+  access-class SSH in
 boot kickstart bootflash:/n3500-uk9-kickstart.6.0.2.A4.5.bin 
 boot system bootflash:/n3500-uk9.6.0.2.A4.5.bin 
 router ospf 10
