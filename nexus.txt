@@ -445,7 +445,11 @@ snmp-server enable traps poe police
 snmp-server community toracon group network-admin
 
 vlan 1,10-159,200-205,301-315,500-501
+ip dhcp snooping
+service dhcp
+ip dhcp relay
 vrf context management
+
 
 interface Vlan1
 
