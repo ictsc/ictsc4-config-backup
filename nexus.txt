@@ -9,6 +9,7 @@ feature lldp
 
 username admin password 5 $1$ZxrrAa09$giVMu8VRORywrz.QBhtTj/  role network-admin
 ip domain-lookup
+ip access-list SSH
 ip access-list Team1
   10 permit ip any 192.168.1.0/24
   20 permit ip any 192.168.101.0/24
@@ -442,10 +443,7 @@ snmp-server enable traps poe police
 snmp-server community toracon group network-admin
 
 vlan 1,10-159,200-205,301-315,500-501
-service dhcp
-ip dhcp relay
 vrf context management
-
 
 interface Vlan1
 
