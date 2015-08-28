@@ -20,8 +20,8 @@ ip access-list Team1
   40 permit ip any 10.1.0.0/16
   50 deny ip any 10.0.0.0/8
   60 permit ip any 172.16.10.0/24
-  70 permit udp any 172.16.4.0/24 eq snmp
-  80 permit icmp any 172.16.4.0/24 echo-reply
+  70 permit udp any 172.16.0.0/24 eq snmp
+  80 permit icmp any 172.16.0.0/24 echo-reply
   90 permit ip any 172.16.5.0/24
   100 permit tcp any 172.16.0.0/24 established
   110 deny ip any 172.16.0.0/16
