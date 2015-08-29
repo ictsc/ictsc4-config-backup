@@ -93,9 +93,9 @@ ip access-list Team14
   120 permit ip any any
 ip access-list Team15
   10 permit ip any 192.168.15.0/24
-  20 permit ip any 192.168.115.0 0.0.0.25
-  30 deny ip any 192.168.0.0 0.0.255.25
-  40 permit ip any 10.15.0.0 0.0.255.25
+  20 permit ip any 192.168.115.0/24
+  30 deny ip any 192.168.0.0/16
+  40 permit ip any 10.15.0.0/16
   50 deny ip any 10.0.0.0/8
   60 permit ip any 172.16.150.0/24
   70 permit udp any 172.16.0.0/24 eq snmp
