@@ -452,6 +452,8 @@ vrf context management
 
 
 interface Vlan1
+  no shutdown
+  ip address 1.1.1.1/24
 
 interface Vlan10
   no shutdown
