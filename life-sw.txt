@@ -1,4 +1,4 @@
-Current configuration : 9147 bytes
+Current configuration : 9183 bytes
 !
 version 12.2
 no service pad
@@ -132,7 +132,8 @@ interface GigabitEthernet1/0/9
 interface GigabitEthernet1/0/10
  description life-seg
  switchport access vlan 200
- switchport mode access
+ switchport trunk allowed vlan 1,100
+ switchport mode trunk
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/11
