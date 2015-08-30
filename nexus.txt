@@ -13,20 +13,6 @@ ip access-list SSH
   10 deny ip 192.168.0.0/16 any
   20 deny ip 172.16.1.0/24 any
   30 permit ip any any
-ip access-list VLAN200
-  10 permit tcp any any established
-  20 permit ip any any
-ip access-list VLAN201
-  10 deny ip any 172.16.0.0/16
-  20 deny ip any 192.168.0.0/16
-  30 deny ip any 10.0.0.0/8
-  40 permit ip any any
-ip access-list VLAN204
-  10 permit ip 172.16.0.0/24 any
-  20 permit tcp any any established
-ip access-list VLAN205
-  10 deny tcp 172.16.1.0/24 any eq 22
-  20 permit ip any any
 ip access-list copp-system-acl-bfd
   10 permit udp any any eq 3784
   20 permit udp any any eq 3785
@@ -588,151 +574,196 @@ interface port-channel6
 interface Ethernet1/1
   description UCS-1-Port1
   switchport mode trunk
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/2
   description UCS-1-Port2
   switchport mode trunk
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/3
   description UCS-2-Port1
   switchport mode trunk
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/4
   description UCS-2-Port2
   switchport mode trunk
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/5
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/6
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/7
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/8
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/9
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/10
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/11
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/12
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/13
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/14
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/15
   switchport mode trunk
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/16
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/17
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/18
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/19
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/20
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/21
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/22
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/23
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/24
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/25
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/26
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/27
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/28
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/29
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/30
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/31
   switchport mode trunk
+  spanning-tree port type edge
   channel-group 6
   no shutdown
 
 interface Ethernet1/32
   switchport mode trunk
+  spanning-tree port type edge
   channel-group 6
   no shutdown
 
 interface Ethernet1/33
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/34
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/35
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/36
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/37
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/38
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/39
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/40
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/41
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/42
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/43
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/44
+  spanning-tree port type edge
   no shutdown
 
 interface Ethernet1/45
   speed 1000
   switchport mode trunk
+  spanning-tree port type edge
   channel-group 5
   no shutdown
 
@@ -740,6 +771,7 @@ interface Ethernet1/46
   speed 1000
   description to_life-sw_gi1/0/52
   switchport mode trunk
+  spanning-tree port type edge
   channel-group 5
   no shutdown
 
@@ -747,6 +779,7 @@ interface Ethernet1/47
   speed 1000
   description to_PoE1_1/0/49
   switchport mode trunk
+  spanning-tree port type edge
   channel-group 3
   no shutdown
 
@@ -754,6 +787,7 @@ interface Ethernet1/48
   speed 1000
   description to_PoE1/0/50
   switchport mode trunk
+  spanning-tree port type edge
   channel-group 3
   no shutdown
 
