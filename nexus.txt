@@ -927,6 +927,7 @@ interface Ethernet1/46
   speed 1000
   description to_life-sw_gi1/0/52
   switchport mode trunk
+  channel-group 5
   no shutdown
 
 interface Ethernet1/47
