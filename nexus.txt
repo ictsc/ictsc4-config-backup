@@ -772,6 +772,9 @@ interface port-channel3
   description to_PoE1
   switchport mode trunk
 
+interface port-channel5
+  speed 1000
+
 interface Ethernet1/1
   description UCS-1-Port1
   switchport mode trunk
@@ -914,6 +917,8 @@ interface Ethernet1/44
   no shutdown
 
 interface Ethernet1/45
+  speed 1000
+  channel-group 5
   no shutdown
 
 interface Ethernet1/46

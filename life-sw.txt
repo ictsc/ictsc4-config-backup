@@ -1,4 +1,4 @@
-Current configuration : 9183 bytes
+Current configuration : 9295 bytes
 !
 version 12.2
 no service pad
@@ -70,6 +70,9 @@ no spanning-tree vlan 118-119,128-129,138-139,148-149,158-159,204-205,500
 vlan internal allocation policy ascending
 !
 !
+!
+interface Port-channel1
+ switchport mode trunk
 !
 interface FastEthernet0
  no ip address
@@ -357,12 +360,14 @@ interface GigabitEthernet1/0/50
 !
 interface GigabitEthernet1/0/51
  description NOT-USE
- shutdown
+ switchport mode trunk
+ channel-group 1 mode on
 !
 interface GigabitEthernet1/0/52
  description to_Nexus_1/46
  switchport mode trunk
  ip access-group NTP in
+ channel-group 1 mode on
 !
 interface Vlan1
  no ip address
