@@ -885,6 +885,8 @@ interface Ethernet1/31
   no shutdown
 
 interface Ethernet1/32
+  switchport mode trunk
+  channel-group 6
   no shutdown
 
 interface Ethernet1/33
