@@ -1,4 +1,4 @@
-Current configuration : 9295 bytes
+Current configuration : 9319 bytes
 !
 version 12.2
 no service pad
@@ -361,6 +361,7 @@ interface GigabitEthernet1/0/50
 interface GigabitEthernet1/0/51
  description NOT-USE
  switchport mode trunk
+ ip access-group NTP in
  channel-group 1 mode on
 !
 interface GigabitEthernet1/0/52
