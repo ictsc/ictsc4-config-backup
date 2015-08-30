@@ -989,4 +989,12 @@ router ospf 10
   network 172.16.80.0/24 area 0.0.0.0
   network 172.16.90.0/24 area 0.0.0.0
   network 172.16.100.0/24 area 0.0.0.0
-  network 172.16.110.0/24 area 0.0.0
+  network 172.16.110.0/24 area 0.0.0.0
+  network 172.16.120.0/24 area 0.0.0.0
+  network 172.16.130.0/24 area 0.0.0.0
+  network 172.16.140.0/24 area 0.0.0.0
+  network 172.16.150.0/24 area 0.0.0.0
+  network 172.17.0.0/24 area 0.0.0.0
+  network 172.17.105.0/24 area 0.0.0.0
+  default-information originate always
+ip route 0.0.0.0/0 172.17.1.1
