@@ -236,7 +236,7 @@ snmp-server enable traps poe pwrusageoff
 snmp-server enable traps poe police
 snmp-server community toracon group network-admin
 
-vlan 1,10-159,200-205,301-315,500-501
+vlan 1,10-101,103-159,200-205,301-315,500-501
 service dhcp
 ip dhcp relay
 vrf context management
@@ -406,6 +406,9 @@ interface Vlan100
   ip dhcp relay address 172.17.105.5 
 
 interface Vlan102
+  no shutdown
+  ip address 192.168.110.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan103
   no shutdown
@@ -418,6 +421,8 @@ interface Vlan110
   ip access-group Team11 in
   ip address 172.16.110.1/24
   ip dhcp relay address 172.17.105.5 
+
+interface Vlan112
 
 interface Vlan113
   no shutdown
