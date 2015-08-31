@@ -423,6 +423,9 @@ interface Vlan110
   ip dhcp relay address 172.17.105.5 
 
 interface Vlan112
+  no shutdown
+  ip address 192.168.111.1/24
+  ip dhcp relay address 172.17.105.5 
 
 interface Vlan113
   no shutdown
@@ -434,6 +437,11 @@ interface Vlan120
   no shutdown
   ip access-group Team12 in
   ip address 172.16.120.1/24
+  ip dhcp relay address 172.17.105.5 
+
+interface Vlan122
+  no shutdown
+  ip address 192.168.112.1/24
   ip dhcp relay address 172.17.105.5 
 
 interface Vlan123
@@ -448,6 +456,11 @@ interface Vlan130
   ip address 172.16.130.1/24
   ip dhcp relay address 172.17.105.5 
 
+interface Vlan132
+  no shutdown
+  ip address 192.168.113.1/24
+  ip dhcp relay address 172.17.105.5 
+
 interface Vlan133
   no shutdown
   ip access-group Team13 in
@@ -460,6 +473,11 @@ interface Vlan140
   ip address 172.16.140.1/24
   ip dhcp relay address 172.17.105.5 
 
+interface Vlan142
+  no shutdown
+  ip address 192.168.114.1/24
+  ip dhcp relay address 172.17.105.5 
+
 interface Vlan143
   no shutdown
   ip access-group Team14 in
@@ -470,6 +488,11 @@ interface Vlan150
   no shutdown
   ip access-group Team15 in
   ip address 172.16.150.1/24
+  ip dhcp relay address 172.17.105.5 
+
+interface Vlan152
+  no shutdown
+  ip address 192.168.115.1/24
   ip dhcp relay address 172.17.105.5 
 
 interface Vlan153
