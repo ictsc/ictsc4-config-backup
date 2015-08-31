@@ -388,6 +388,11 @@ interface Vlan90
   ip address 172.16.90.1/24
   ip dhcp relay address 172.17.105.5 
 
+interface Vlan92
+  no shutdown
+  ip address 192.168.109.1/24
+  ip dhcp relay address 172.17.105.5 
+
 interface Vlan93
   no shutdown
   ip access-group Team9 in
@@ -400,15 +405,12 @@ interface Vlan100
   ip address 172.16.100.1/24
   ip dhcp relay address 172.17.105.5 
 
+interface Vlan102
+
 interface Vlan103
   no shutdown
   ip access-group Team10 in
   ip address 10.10.3.1/24
-  ip dhcp relay address 172.17.105.5 
-
-interface Vlan109
-  no shutdown
-  ip address 192.168.109.1/24
   ip dhcp relay address 172.17.105.5 
 
 interface Vlan110
